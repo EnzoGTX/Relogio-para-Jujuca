@@ -4,31 +4,111 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(asses/WhatsApp\ Image\ 2026-07-20\ at\ 23.11.43.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .relogio{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
-    gap: 20px;
-    background-color: #b77b7b;
-}
-.footer{
-    display: flex;
-    justify-content: center;
     text-align: center;
-    flex-direction: column;
-    background-color: #785c5c;
-    
+    justify-content: center;
+    min-height: 100vh;
+    gap: 20px;
+    padding: 20px;
 }
+
 .display{
-    background-color: #e9a1a1;
-    padding: 60px;
-    border-radius: 10px;
-    font-size: 50px;
-    
+    background-color: rgba(229, 180, 245, 0.35);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    padding: 20px 40px;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Courier New', monospace;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 4px;
+
+    animation: aparecer 2s ease-out, brilhoSuave 4s ease-in-out infinite 2s;
 }
-body{
-    background-color: #d6c3c3;
-    font-family: Arial, Helvetica, sans-serif;
+
+footer{
+    display: flex;
+    background-color: rgba(221, 179, 249, 0.4);
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+
+    animation: aparecer 2.5s ease-out, flutuar 6s ease-in-out infinite 2.5s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes brilhoSuave{
+    0%, 100%{
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    50%{
+        box-shadow: 0 8px 40px rgba(229, 180, 245, 0.5);
+    }
+}
+
+@keyframes flutuar{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 600px) {
+    .display{
+        font-size: 2.5rem;
+        padding: 15px 25px;
+    }
+
+    footer{
+        font-size: 0.95rem;
+        padding: 15px 25px;
+    }
 }
